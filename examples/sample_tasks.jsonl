@@ -1,0 +1,3 @@
+{"task_id": "scr_orders_001", "screenshot": "examples/screenshots/orders_dashboard.png", "notes": "Orders dashboard — review the right-side action panel especially."}
+{"task_id": "scr_signup_002", "screenshot": "examples/screenshots/signup_form.png", "notes": "Sign-up form — focus on field labels and validation states."}
+{"task_id": "scr_settings_003", "screenshot": "examples/screenshots/settings_page.png", "notes": "Settings page with toggles."}
