@@ -34,7 +34,7 @@ def cmd_annotate(args) -> int:
     already = set()
     if out.exists():
         already = {r["task_id"] for r in _read_jsonl(out)}
-        print(f"Resuming — {len(already)} tasks already annotated.")
+        print(f"Resuming. {len(already)} tasks already annotated.")
 
     n = 0
     try:
@@ -63,9 +63,9 @@ def cmd_validate(args) -> int:
     recs = _read_jsonl(args.annotations)
     errors = stats_mod.validate(recs)
     if not errors:
-        print(f"OK — {len(recs)} record(s), no validation errors.")
+        print(f"OK: {len(recs)} record(s), no validation errors.")
         return 0
-    print(f"FAIL — {len(errors)} error(s):")
+    print(f"FAIL: {len(errors)} error(s):")
     for e in errors:
         print(f"  [{e['task_id']}] {e['path']}: {e['message']}")
     return 1

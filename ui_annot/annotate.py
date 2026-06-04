@@ -45,8 +45,8 @@ def annotate_task(task: dict, rater: str) -> dict:
             category = _menu("  Category:", ISSUE_CATEGORIES)
             evidence = input("  Evidence (what you observe, not what you think): ").strip()
             while len(evidence) < 5:
-                evidence = input("  Too short — give a real observation: ").strip()
-            inference = input("  Inference (optional — what this might mean): ").strip() or None
+                evidence = input("  Too short, give a real observation: ").strip()
+            inference = input("  Inference (optional, what this might mean): ").strip() or None
             issues.append({
                 "severity": severity,
                 "category": category,
