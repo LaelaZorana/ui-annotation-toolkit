@@ -1,6 +1,6 @@
 # ui-annotation-toolkit
 
-A small CLI for **annotating software screenshots** — the kind of task that shows up in AI training pipelines that need labelled UI data (dashboards, admin panels, CRMs, web apps) or in old-fashioned UX/QA review work where you walk through a screen and flag what's wrong with it.
+A small CLI for **annotating software screenshots**, the kind of task that shows up in AI training pipelines that need labelled UI data (dashboards, admin panels, CRMs, web apps) or in old-fashioned UX/QA review work where you walk through a screen and flag what's wrong with it.
 
 I built this because I was doing a bunch of UI review tasks where I'd open a screenshot in Preview, write a Google Doc with "the *Save* button on the orders dashboard isn't aligned with the *Cancel* button, also the field label says 'Phone' but the placeholder is for an email…" and then realise three days later that my notes weren't structured enough to compare across screenshots. So I made the structure explicit.
 
@@ -10,9 +10,9 @@ Given a folder of screenshots and a JSONL of annotation tasks, the CLI walks you
 
 - **UI elements** you see, by rough region (`top-left`, `top-right`, `middle`, `bottom-left`, `bottom-right`, etc.) and type (`button`, `input`, `dropdown`, `nav`, `header`, `table`, `modal`, `error`, `other`)
 - **Issues** with each element, tagged by severity (`CRITICAL` / `HIGH` / `MEDIUM` / `LOW`) and category (`layout`, `label_mismatch`, `accessibility`, `state_inconsistency`, `data_problem`, `other`)
-- **Observations vs inferences** — every issue has an `evidence` field forcing you to say *what you see* before saying *what you think it means*. This is the difference between a useful annotation and an opinion.
+- **Observations vs inferences**, because every issue has an `evidence` field that forces you to say *what you see* before you say *what you think it means*, which is the whole difference between a useful annotation and an opinion.
 
-Output is JSONL — one record per screenshot, with all annotations attached. A `summary` command rolls up counts by element type, severity, and category.
+Output is JSONL, one record per screenshot with all annotations attached, and a `summary` command rolls up counts by element type, severity, and category.
 
 ## Quick start
 
